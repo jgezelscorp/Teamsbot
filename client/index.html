@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="out"></div>
+
+<script>
+async function loop() {
+  const res = await fetch("http://localhost:5050/poll");
+  const data = await res.json();
+  if (data.chunk) {
+    // send to Copilot Studio agent
+    const agent = await fetch("YOUR_AGENT_ENDPOINT", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ input: data.chunk })
+    });
+
+    const text = await agent.text();
+    document.getElementById("out").innerHTML += `<div>${text}</div>`;
+  }
+  requestAnimationFrame(loop);
+}
+
+loop();
+</script>
+</body>
+</html>
