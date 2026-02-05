@@ -5,13 +5,13 @@
 ```mermaid
 graph TD
     subgraph "Microsoft Teams Environment"
-        Meeting[Teams Meeting]
-        Host[Meeting Host (User)]
+        Meeting["Teams Meeting"]
+        Host["Meeting Host (User)"]
     end
 
     subgraph "Azure Environment"
         subgraph "Compute & Connectivity"
-            BotService[Azure Bot Service]
+            BotService["Azure Bot Service"]
             MediaBot["Real-time Media Bot\n(Azure Container Apps)"]
         end
         
@@ -22,7 +22,7 @@ graph TD
     end
 
     subgraph "External/SaaS"
-        Copilot[Microsoft Copilot Studio Agent]
+        Copilot["Microsoft Copilot Studio Agent"]
     end
 
     %% Audio Flow
