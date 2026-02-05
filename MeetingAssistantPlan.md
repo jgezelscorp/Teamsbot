@@ -12,12 +12,12 @@ graph TD
     subgraph "Azure Environment"
         subgraph "Compute & Connectivity"
             BotService["Azure Bot Service"]
-            MediaBot["Real-time Media Bot\n(Azure Container Apps)"]
+            MediaBot["Real-time Media Bot (Azure Container Apps)"]
         end
         
         subgraph "AI Services"
-            Speech[Azure Speech Service\n(STT)]
-            OpenAI[Azure OpenAI\n(Intent Detection)]
+            Speech[Azure Speech Service (STT)]
+            OpenAI[Azure OpenAI (Intent Detection)]
         end
     end
 
